@@ -1,7 +1,7 @@
-Graphs:
+Graphs / Networks
 
-Node.
-Edges link nodes.
+Node / Vertices
+Edges /Links: link nodes
 Degree of a node is number of edges connected to that node.
 
 Eulerian path - path through a graph along the edges that only hits each edge once while visiting all the nodes in a graph.
@@ -10,3 +10,8 @@ Eulerian Tour - special kind of Eulerian path where you start and end at the sam
 
 Divide and Conquer:
 Break a problem into roughly equal sized subproblems, solve them separately, and then combine results.
+
+Types of Networks:
+
+Chain networks: o----o-----o-----o-----o      5 nodes, 4 edges.
+m = n - 1       m edges with n nodes
