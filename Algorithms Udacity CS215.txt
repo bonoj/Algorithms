@@ -13,5 +13,13 @@ Break a problem into roughly equal sized subproblems, solve them separately, and
 
 Types of Networks:
 
-Chain networks: o----o-----o-----o-----o      5 nodes, 4 edges.
+Chain Network: o----o-----o-----o-----o      5 nodes, 4 edges.
 m = n - 1       m edges with n nodes
+
+
+Ring Network: o----o-----o-----o-----o
+              |----------------------|
+
+Chain network with loop completed. 5 nodes, 5 edges.
+m = n          m edges with n nodes
+
