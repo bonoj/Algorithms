@@ -8,3 +8,5 @@ Eulerian path - path through a graph along the edges that only hits each edge on
 
 Eulerian Tour - special kind of Eulerian path where you start and end at the same node.
 
+Divide and Conquer:
+Break a problem into roughly equal sized subproblems, solve them separately, and then combine results.
