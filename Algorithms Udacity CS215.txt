@@ -64,3 +64,37 @@ Complete Graph: aka Clique
 Each node in a graph is connected to each other node, e.g. a 5 node graph ends up with a star in a pentagon, 5 nodes and 10 edges.
 
 m = n * (n-1) / 2 which is in BigTheta(n^2). That is, the growth relationship of m with regards to n is quadratic.
+
+Tree Graphs:
+-is connected
+-has no cycles or loops.
+
+
+Randomly Generated Graphs:
+Erdos - Renyi Model
+n nodes
+p connectivity probability (coin flip, for instance)
+1. Generate nodes.
+2. For each node pair, i,j
+connect i,j with probability p
+
+Some Recursive Graphs:
+1. n nodes
+2. create graph on n/2 nodes
+3. create graph on other n/2 nodes
+4. generate edges between the two smaller graphs
+5. return graph
+
+Recurrence Relations
+T: # of edges
+T(1) = 0
+T(n) = 2T(n/2) + 1
+
+Tree graphs grow linearly. m = 2n = BigTheta(n)
+
+
+GRAPH RECAP:
+Recurrence                              Graphs                          Edge Growth
+T(n) = 2T(n/2) + 1                      tree, chain                     BigTheta(n)
+T(n) = 2T(n/2) + BigTheta(n^2)          clique, dense graph             BigTheta(n^2)
+T(n) = 2T(n/2) + BigTheta(n)            hypercube, tangled hypercube    BigTheta(n * log(n))
