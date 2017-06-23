@@ -46,4 +46,5 @@ o------o---\
 o------o---/
 
 n = 5, m = 6, r = 3         where n is a node, m is an edge, and r is a region.
+Relationship between n, m, and r: For any planar, n - m + r = 2
 
