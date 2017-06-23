@@ -161,31 +161,40 @@ import math
 # Generate a combination lock graph given a list of nodes
 #
 
-def make_link(G, node1, node2):
-    if node1 not in G:
-        G[node1] = {}
-    (G[node1])[node2] = 1
-    if node2 not in G:
-        G[node2] = {}
-    (G[node2])[node1] = 1
-    return G
+# def make_link(G, node1, node2):
+#     if node1 not in G:
+#         G[node1] = {}
+#     (G[node1])[node2] = 1
+#     if node2 not in G:
+#         G[node2] = {}
+#     (G[node2])[node1] = 1
+#     return G
+#
+# def create_combo_lock(nodes):
+#     G = {}
+#     make_link(G, nodes[0], nodes[1])
+#     for i in range(2, len(nodes)):
+#         # chain part
+#         make_link(G, nodes[i-1], nodes[i])
+#         # star part
+#         make_link(G, 0, nodes[i])
+#
+#     # your code here
+#     # for i in range(nodes - 1):
+#     #     G[i] = [i,i+1]
+#     #     G[0].append([0,i+1])
+#     #     # G[0] = G[0].append([i+1])
+#
+#
+#     return G
+#
+# print(create_combo_lock(range(5)))
 
-def create_combo_lock(nodes):
-    G = {}
-    make_link(G, nodes[0], nodes[1])
-    for i in range(2, len(nodes)):
-        # chain part
-        make_link(G, nodes[i-1], nodes[i])
-        # star part
-        make_link(G, 0, nodes[i])
+# Erdos Renyi Graph where n = 256 and p = 0.25
+# edges = 0
+# n = 256
+# p = 0.25
+# edges = n * (n-1) * p / 2
+#
+# print(edges)
 
-    # your code here
-    # for i in range(nodes - 1):
-    #     G[i] = [i,i+1]
-    #     G[0].append([0,i+1])
-    #     # G[0] = G[0].append([i+1])
-
-
-    return G
-
-print(create_combo_lock(range(5)))
