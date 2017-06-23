@@ -13,16 +13,15 @@ Break a problem into roughly equal sized subproblems, solve them separately, and
 
 Types of Networks:
 
-Chain Network: o----o-----o-----o-----o      5 nodes, 4 edges.
-m = n - 1       m edges with n nodes
+Chain Network: chains do not have cycles
+o----o-----o-----o-----o
+e.g. 5 nodes, 4 edges.          m = n - 1       m edges with n nodes
 
 
-Ring Network: o----o-----o-----o-----o
-              |----------------------|
-
-Chain network with loop completed. 5 nodes, 5 edges.
-m = n          m edges with n nodes
-
+Ring Network: rings must have cycles
+o----o-----o-----o-----o
+|----------------------|
+e.g. 5 nodes, 5 edges.               m = n          m edges with n nodes
 
 Grid Network
 n = 20, m = 15 + 16 = 31
@@ -98,3 +97,7 @@ Recurrence                              Graphs                          Edge Gro
 T(n) = 2T(n/2) + 1                      tree, chain                     BigTheta(n)
 T(n) = 2T(n/2) + BigTheta(n^2)          clique, dense graph             BigTheta(n^2)
 T(n) = 2T(n/2) + BigTheta(n)            hypercube, tangled hypercube    BigTheta(n * log(n))
+
+Star Network:
+has a single node in the center
+that is connected to all the rest of the nodes in the graph directly
