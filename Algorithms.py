@@ -130,3 +130,4 @@ for n in range(1,10):
 
 for n in range(1,10):
     print([(n), clique(n), n * (n-1) / 2])
+
