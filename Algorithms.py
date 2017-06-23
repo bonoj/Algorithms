@@ -150,11 +150,42 @@ import math
 #     print(star_network(n))
 
 
-n = 11310
-print(4 * n * n)
-print(math.pow(math.log(n), 7))
-print(9 * n * (math.pow(math.log(n), 2)))
-print(math.pow(n, 2/3))
+# n = 11310
+# print(4 * n * n)
+# print(math.pow(math.log(n), 7))
+# print(9 * n * (math.pow(math.log(n), 2)))
+# print(math.pow(n, 2/3))
+#
+# print(n * n)
 
-print(n * n)
+# Generate a combination lock graph given a list of nodes
+#
 
+def make_link(G, node1, node2):
+    if node1 not in G:
+        G[node1] = {}
+    (G[node1])[node2] = 1
+    if node2 not in G:
+        G[node2] = {}
+    (G[node2])[node1] = 1
+    return G
+
+def create_combo_lock(nodes):
+    G = {}
+    make_link(G, nodes[0], nodes[1])
+    for i in range(2, len(nodes)):
+        # chain part
+        make_link(G, nodes[i-1], nodes[i])
+        # star part
+        make_link(G, 0, nodes[i])
+
+    # your code here
+    # for i in range(nodes - 1):
+    #     G[i] = [i,i+1]
+    #     G[0].append([0,i+1])
+    #     # G[0] = G[0].append([i+1])
+
+
+    return G
+
+print(create_combo_lock(range(5)))
