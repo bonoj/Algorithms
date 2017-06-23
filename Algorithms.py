@@ -119,6 +119,14 @@ def clique(n):
 
     return edges
 
-print(clique(3))
-print(clique(5))
-print(clique(6))
+# print(clique(3))
+# print(clique(5))
+# print(clique(6))
+
+for n in range(1,10):
+    numNodes = n
+    numEdges = clique(n)
+    print("A graph with " + str(numNodes) + " nodes has " + str(numEdges) + " edges.")
+
+for n in range(1,10):
+    print([(n), clique(n), n * (n-1) / 2])
