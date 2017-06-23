@@ -48,3 +48,14 @@ o------o---/
 n = 5, m = 6, r = 3         where n is a node, m is an edge, and r is a region.
 Relationship between n, m, and r: For any planar, n - m + r = 2
 
+Growth rate of edges in planar graph:
+every region must be bounded by at least 3 edges.
+so with n - m + r = 2 in mind, 3 * regions (3r) must be less than 2 * edges (2m)
+3r <= 2m, r <= 2/3 * m
+m + 2 = n + r <= n + 2/3 * m
+3m + 6 <= 3n + 2m
+m <= 3n - 6 which is in BigTheta(n) (linear)
+
+Recap:
+For chain, ring, grid, and planar graphs, m is in BigTheta(n). That is, their growth as n nodes increases is linear - f(n) = g(n)
+
