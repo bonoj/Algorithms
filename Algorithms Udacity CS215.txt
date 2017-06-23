@@ -23,3 +23,14 @@ Ring Network: o----o-----o-----o-----o
 Chain network with loop completed. 5 nodes, 5 edges.
 m = n          m edges with n nodes
 
+
+Grid Network
+n = 20, m = 15 + 16 = 31
+
+
+Complete Set:
+f(n) is in o(g(n)) == f(n) < g(n)               little o
+f(n) is in O(g(n)) == f(n) <= g(n)              Big O
+f(n) is in big theta(g(n)) == f(n) = g(n)       Big Theta
+f(n) is in big omega(g(n)) == f(n) >= g(n)      Big Omega
+f(n) is in little omega(g(n)) == f(n) > g(n)   little omega
