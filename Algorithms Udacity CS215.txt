@@ -101,3 +101,17 @@ T(n) = 2T(n/2) + BigTheta(n)            hypercube, tangled hypercube    BigTheta
 Star Network:
 has a single node in the center
 that is connected to all the rest of the nodes in the graph directly
+
+Clustering coefficients:
+
+Clustering coefficient of a node:
+CC(v): v: a node, Kv: its degree, Nv: number of links between neigbours of v
+CC(v) = 2Nv / (Kv * (Kv -1))
+
+The clustering coefficient is the fraction of possible interconnections:
+                                0 <= CC(v) <= 1
+Star (no neighbours connected)                  clique (all neighbours connected)
+
+Clustering coefficient of a graph:
+The average of the clustering coefficients CC(v) of the nodes in the graph.
+
