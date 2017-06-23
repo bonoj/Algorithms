@@ -98,3 +98,27 @@ print(sum([len(G[node]) for node in G.keys()])/2)
 print(2 * n * n)
 print(6 * n)
 print(20 * math.log(n, 2))
+
+
+print("\nHow many edges in a complete graph on n nodes?\n")
+
+def getNodeArray(n):
+    nodeArray = []
+    i = 0
+    while i < n:
+        i = i + 1
+        nodeArray.append(i)
+    return nodeArray
+
+def clique(n):
+
+    edges = 0
+    nodeArray = getNodeArray(n)
+    for node in nodeArray:
+        edges = edges + (node - 1)
+
+    return edges
+
+print(clique(3))
+print(clique(5))
+print(clique(6))
