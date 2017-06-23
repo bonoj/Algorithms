@@ -94,3 +94,7 @@ print(len(G))
 
 # How many edges?
 print(sum([len(G[node]) for node in G.keys()])/2)
+
+print(2 * n * n)
+print(6 * n)
+print(20 * math.log(n, 2))

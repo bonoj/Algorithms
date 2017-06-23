@@ -34,3 +34,16 @@ f(n) is in O(g(n)) == f(n) <= g(n)              Big O
 f(n) is in big theta(g(n)) == f(n) = g(n)       Big Theta
 f(n) is in big omega(g(n)) == f(n) >= g(n)      Big Omega
 f(n) is in little omega(g(n)) == f(n) > g(n)   little omega
+
+Planar Graphs: Graph drawn on a plane such that the edges don't cross.
+
+    R3
+
+o------o---\
+|      |    \
+|   R1 | R2  o
+|      |    /
+o------o---/
+
+n = 5, m = 6, r = 3         where n is a node, m is an edge, and r is a region.
+
