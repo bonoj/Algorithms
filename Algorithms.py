@@ -131,3 +131,7 @@ for n in range(1,10):
 for n in range(1,10):
     print([(n), clique(n), n * (n-1) / 2])
 
+n = 15
+print(math.log(n))
+print(n)
+print(math.pow(2,n))
