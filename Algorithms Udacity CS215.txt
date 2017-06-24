@@ -30,9 +30,9 @@ n = 20, m = 15 + 16 = 31
 Complete Set:
 f(n) is in o(g(n)) == f(n) < g(n)               little o
 f(n) is in O(g(n)) == f(n) <= g(n)              Big O
-f(n) is in big theta(g(n)) == f(n) = g(n)       Big Theta
-f(n) is in big omega(g(n)) == f(n) >= g(n)      Big Omega
-f(n) is in little omega(g(n)) == f(n) > g(n)   little omega
+f(n) is in big theta(g(n)) == f(n) = g(n)       Theta (Big)
+f(n) is in big omega(g(n)) == f(n) >= g(n)      Omega (Big)
+f(n) is in little omega(g(n)) == f(n) > g(n)    omega (little)
 
 Planar Graphs: Graph drawn on a plane such that the edges don't cross.
 
@@ -53,16 +53,16 @@ so with n - m + r = 2 in mind, 3 * regions (3r) must be less than 2 * edges (2m)
 3r <= 2m, r <= 2/3 * m
 m + 2 = n + r <= n + 2/3 * m
 3m + 6 <= 3n + 2m
-m <= 3n - 6 which is in BigTheta(n) (linear)
+m <= 3n - 6 which is in Theta(n) (linear)
 
 Recap:
-For chain, ring, grid, and planar graphs, the relationship of m with regards to n is in BigTheta(n). That is, their growth as n nodes increases is linear - f(n) = g(n)
+For chain, ring, grid, and planar graphs, the relationship of m with regards to n is in Theta(n). That is, their growth as n nodes increases is linear - f(n) = g(n)
 
 
 Complete Graph: aka Clique
 Each node in a graph is connected to each other node, e.g. a 5 node graph ends up with a star in a pentagon, 5 nodes and 10 edges.
 
-m = n * (n-1) / 2 which is in BigTheta(n^2). That is, the growth relationship of m with regards to n is quadratic.
+m = n * (n-1) / 2 which is in Theta(n^2). That is, the growth relationship of m with regards to n is quadratic.
 
 Tree Graphs:
 -is connected
@@ -89,14 +89,14 @@ T: # of edges
 T(1) = 0
 T(n) = 2T(n/2) + 1
 
-Tree graphs grow linearly. m = 2n = BigTheta(n)
+Tree graphs grow linearly. m = 2n = Theta(n)
 
 
 GRAPH RECAP:
 Recurrence                              Graphs                          Edge Growth
-T(n) = 2T(n/2) + 1                      tree, chain                     BigTheta(n)
-T(n) = 2T(n/2) + BigTheta(n^2)          clique, dense graph             BigTheta(n^2)
-T(n) = 2T(n/2) + BigTheta(n)            hypercube, tangled hypercube    BigTheta(n * log(n))
+T(n) = 2T(n/2) + 1                      tree, chain                     Theta(n)
+T(n) = 2T(n/2) + Theta(n^2)          clique, dense graph             Theta(n^2)
+T(n) = 2T(n/2) + Theta(n)            hypercube, tangled hypercube    Theta(n * log(n))
 
 Star Network:
 has a single node in the center
@@ -135,7 +135,6 @@ a-b-c-d-e-f-g
 5-4-2-1-3-6-7
 
 
-
 Breadth First search
 Breadth First without recursion:
 -Grab the first element of an open list
@@ -144,3 +143,11 @@ Breadth First without recursion:
 a-b-c-d-e-f-g
 
 Choose starting point, create open list, append to end of list, check the first element's neighbors and pop it.
+
+
+Sing Source Shortest Paths
+Find "central" nodes.
+How central is V1? That is, what is its average shortest path length to all of the other nodes?
+
+shortest path length V1 to V2 takes time: Theta(n+m) (the nodes + edges)
+Naively: repeat for all nodes: Theta(n(n+m)) = Theta(n^2 + nm)

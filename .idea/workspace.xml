@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a3cb6b9-9086-4387-91ed-e42c559c34e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms Udacity CS215.txt" afterPath="$PROJECT_DIR$/Algorithms Udacity CS215.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Algorithms.py" afterPath="$PROJECT_DIR$/Algorithms.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +18,11 @@
       <file leaf-file-name="Algorithms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Algorithms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1467">
-              <caret line="252" column="6" lean-forward="false" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
+            <state relative-caret-position="1416">
+              <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1498205359701" expanded="true" signature="3954:4029" ph="..." />
+                <marker date="1498344200894" expanded="true" signature="3954:4029" ph="..." />
               </folding>
             </state>
           </provider>
@@ -274,11 +275,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1467">
-          <caret line="252" column="6" lean-forward="false" selection-start-line="252" selection-start-column="6" selection-end-line="252" selection-end-column="6" />
+        <state relative-caret-position="1416">
+          <caret line="255" column="0" lean-forward="true" selection-start-line="255" selection-start-column="0" selection-end-line="255" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1498205359701" expanded="true" signature="3954:4029" ph="..." />
+            <marker date="1498344200894" expanded="true" signature="3954:4029" ph="..." />
           </folding>
         </state>
       </provider>
