@@ -115,3 +115,21 @@ Star (no neighbours connected)                  clique (all neighbours connected
 Clustering coefficient of a graph:
 The average of the clustering coefficients CC(v) of the nodes in the graph.
 
+
+Connected Components
+-is everything connected?
+-is a set of nodes isolatd?
+-can all nodes communicate?
+
+Graph searching:
+Depth First search: Search first as deep as possible (often with recursion) from an arbitrary starting point
+Depth First without recursion:
+-Grab the last element of an open list
+-Mark any unmarked neighbors and add to open list
+-Repeat until nothing is open
+
+
+
+Breadth First search
+
+
