@@ -122,14 +122,25 @@ Connected Components
 -can all nodes communicate?
 
 Graph searching:
+
 Depth First search: Search first as deep as possible (often with recursion) from an arbitrary starting point
 Depth First without recursion:
 -Grab the last element of an open list
 -Mark any unmarked neighbors and add to open list
 -Repeat until nothing is open
 
+Choose starting point, create open list, append to end of list, check the last element's neighbors and pop it.
+
+a-b-c-d-e-f-g
+5-4-2-1-3-6-7
+
 
 
 Breadth First search
+Breadth First without recursion:
+-Grab the first element of an open list
+-Mark any unmarked neighbors and add to open list
+-Repeat until nothing is open
+a-b-c-d-e-f-g
 
-
+Choose starting point, create open list, append to end of list, check the first element's neighbors and pop it.
