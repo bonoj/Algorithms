@@ -650,40 +650,44 @@ import math
 # print(secondMostPopular)
 # print(secondMostPopularName)
 
-# #
-# # Write partition to return a new array with
-# # all values less then `v` to the left
-# # and all values greater then `v` to the right
-# #
 #
-# def partition(L, v):
-#     uP = []
-#     lP = []
-#     partitionPivot = rank(L, v)
+# Write partition to return a new array with
+# all values less then `v` to the left
+# and all values greater then `v` to the right
 #
-#     for i in L:
-#         if i < v:
-#             lP.append(i)
-#         elif i > v:
-#             uP.append(i)
-#     lP.append(v)
-#     P = lP + uP
-#
-#     # for i in L:
-#     #     if i > v:
-#     #         P.append(i)
-#     return P
-#
-#
-# def rank(L, v):
-#     pos = 0
-#     for val in L:
-#         if val < v:
-#             pos += 1
-#     return pos
-#
-#
-# L = [77, 55, 42, 34, 89, 51, 49, 31, 61, 72, 93, 12, 22]
-#
+
+import random
+
+def rank(L, v):
+    pos = 0
+    for val in L:
+        if val < v:
+            pos += 1
+    return pos
+
+def partition(L, v):
+    uP = []
+    lP = []
+
+    for i in L:
+        if i < v:
+            lP.append(i)
+        elif i > v:
+            uP.append(i)
+    return(lP, [v], uP)
+
+    return P
+
+def top_k(L, k):
+    v = L[random.randrange(len(L))]
+    (left,middle,right) = partition(L, v)
+    if len(left) == k: return left
+    if len(left) + 1 == k: return left + middle
+    if len(left) > k: return top_k(left, k)
+    return left + middle + top_k(right, k - len(left) - 1)
+
+L = [77, 55, 42, 34, 89, 51, 49, 31, 61, 72, 93, 12, 22]
+
 # print(partition(L, 34))
+print(top_k(L, 6))
 
