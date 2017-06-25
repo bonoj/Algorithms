@@ -205,3 +205,35 @@ min: order statistic 1
 median: order statistic n/2
 2nd largest: order statistic n - 1
 max: order statistic n
+
+Randomized Top K
+Finds the top k (in no particular order) in Theta(n) (linear), independent of k
+Find the Rank of some value V it would fall in a sorted list if you were to sort, but without actually sorting. Can find by iterating through the list and counting all of the numbers smaller than that value V. You end up with a new list partitioned around V, where all values to its left are smaller and all values to its right are larger, but neither smaller nor larger groups are necessarily in order.
+
+Analysis of Top k via partitioning:
+T(1) = 1
+T(n) <= n + 1/2 * T(n/2) + 1/2 * T(n)
+
+T(n) <= 4n which is Theta(n), so linear.
+
+Top k summary so far:
+Sort: Theta(n * logn)
+Selection/insertion: Theta(nk)
+Partition: Theta(n)
+Heap: Theta(n * logk)
+
+Heaps of Fun:
+-Insert
+-Find min
+-Remove min
+
+Heap:
+1. balanced binary tree
+2. value in a node is no bigger than the values of the children
+
+Heap Number: positions in the array:
+Parent of some node i at position (i-1) / 2
+Left child of some node i at position 2i + 1
+Right child of some node i at position 2i + 2
+
+
