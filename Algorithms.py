@@ -649,3 +649,41 @@ import math
 # print(mostPopularName)
 # print(secondMostPopular)
 # print(secondMostPopularName)
+
+# #
+# # Write partition to return a new array with
+# # all values less then `v` to the left
+# # and all values greater then `v` to the right
+# #
+#
+# def partition(L, v):
+#     uP = []
+#     lP = []
+#     partitionPivot = rank(L, v)
+#
+#     for i in L:
+#         if i < v:
+#             lP.append(i)
+#         elif i > v:
+#             uP.append(i)
+#     lP.append(v)
+#     P = lP + uP
+#
+#     # for i in L:
+#     #     if i > v:
+#     #         P.append(i)
+#     return P
+#
+#
+# def rank(L, v):
+#     pos = 0
+#     for val in L:
+#         if val < v:
+#             pos += 1
+#     return pos
+#
+#
+# L = [77, 55, 42, 34, 89, 51, 49, 31, 61, 72, 93, 12, 22]
+#
+# print(partition(L, 34))
+
