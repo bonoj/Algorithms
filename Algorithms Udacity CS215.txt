@@ -145,9 +145,63 @@ a-b-c-d-e-f-g
 Choose starting point, create open list, append to end of list, check the first element's neighbors and pop it.
 
 
-Sing Source Shortest Paths
+Single Source Shortest Paths
 Find "central" nodes.
 How central is V1? That is, what is its average shortest path length to all of the other nodes?
 
 shortest path length V1 to V2 takes time: Theta(n+m) (the nodes + edges)
 Naively: repeat for all nodes: Theta(n(n+m)) = Theta(n^2 + nm)
+
+
+Bridge Edges:
+1. Rewrite graph as a tree
+2. "post order" the nodes - That is, to assign a number to a node, first make sure all of the nodes on its left and right are numbered before giving that node a number. That is, the first node considered is the last node assigned a number.
+
+Bipartite Graphs:
+1. Can have minimum m = n - 1 edges
+2. Can have maximum nleft * nright (nodes on left multiplied by nodes on right)
+3. Maximum possible path length (a chain) is the min(2 * nleft, 2 * nright, nleft + nright -1)
+4. Maximum possible clustering coefficient for a node in a bipartite graph: Always 0
+
+Social Network Analysis
+-betweenness centrality - node is central if it is between lots of other nodes that must pass through it to connect with other nodes.
+-closeness centrality - closeness of a node is the average length of the shortest path between the node and all other nodes in the graph. The more central a node is, the closer it is to all other nodes
+-eigenvector centrality
+-node centrality - node is central if it has lots of edges connected, in a very local sense, like the degree of a node, the number of neighbors it has
+
+Computing Statistics:
+statistics - a number that summarizes a list of numbers
+List of centrality scores:
+-how many?
+-largest?
+-total?
+-# of scores between 2 and 3?
+
+Some statistics:
+max
+min
+midpoint (average of max & min)
+mean (average of all values in L)
+mode (most common value in L)
+median (middlemost value in L, half are bigger, half are smaller)
+
+Statistics solutions on Sorted Lists:
+min: L[0]
+max: L[n-1]
+midpoint: (L[0] + L[n-1]) / 2.0
+median: L[n / 2]
+These run in Theta(1)       (constant runtime)
+
+mean: sum all values / n     (n = len(L))
+
+Getting statistics on Unsorted Lists:
+Plan A: Sort the list first, runtime = Theta(n * logn), which is slower than just iterating through the list.       (logarithmic runtime, slower than Plan B)
+Plan B: Extract the statistic in (effectively) one scan through the data by iterating through the list, runtime = Theta(n)      (linear runtime)
+
+Order Statistics:
+The ith order statistic is the value that ends up in position i if the data is sorted.
+min: order statistic 1
+2nd smallest: order statistc 2
+median: order statistic n/2
+2nd largest: order statistic n - 1
+max: order statistic n
