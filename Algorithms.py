@@ -615,38 +615,37 @@ import math
 #
 # print("Max: " + str(max))
 
-import urllib.request
-
-target_url = "https://www.udacity.com/file?file_key=agpzfnVkYWNpdHl1ckALEgZDb3Vyc2UiBWNzMjE1DAsSCUNvdXJzZVJldhgBDAsSBFVuaXQY-qsODAsSDEF0dGFjaGVkRmlsZRiskBIM"
-
-txt = urllib.request.urlopen(target_url).read()
-
-names = txt.splitlines()
-stringOfNameData = []
-mostPopular = 0
-secondMostPopular = 0
-mostPopularName = ""
-secondMostPopularName = ""
-for name in names:
-    nameString = name.decode('utf-8')
-    # stringOfNames.append(nameString)
-    nameData = nameString.split(',')
-    stringOfNameData.append(nameData)
-    # if (name == names[0]):
-    #     mostPopular = nameData[2]
-    if (nameData[1] != 'F'):
-        continue
-
-    print(nameData)
-    popularity = int(nameData[2])
-
-    if (popularity > mostPopular):
-        secondMostPopular = mostPopular
-        mostPopular = popularity
-        secondMostPopularName = mostPopularName
-        mostPopularName = nameData[0]
-
-print(mostPopular)
-print(mostPopularName)
-print(secondMostPopular)
-print(secondMostPopularName)
+# import urllib.request
+#
+# target_url = "https://www.udacity.com/file?file_key=agpzfnVkYWNpdHl1ckALEgZDb3Vyc2UiBWNzMjE1DAsSCUNvdXJzZVJldhgBDAsSBFVuaXQY-qsODAsSDEF0dGFjaGVkRmlsZRiskBIM"
+#
+# txt = urllib.request.urlopen(target_url).read()
+#
+# names = txt.splitlines()
+# stringOfNameData = []
+# mostPopular = 0
+# secondMostPopular = 0
+# mostPopularName = ""
+# secondMostPopularName = ""
+# for name in names:
+#     nameString = name.decode('utf-8')
+#     # stringOfNames.append(nameString)
+#     nameData = nameString.split(',')
+#     stringOfNameData.append(nameData)
+#     # if (name == names[0]):
+#     #     mostPopular = nameData[2]
+#     if (nameData[1] != 'F'):
+#         continue
+#
+#     popularity = int(nameData[2])
+#
+#     if (popularity > mostPopular):
+#         secondMostPopular = mostPopular
+#         mostPopular = popularity
+#         secondMostPopularName = mostPopularName
+#         mostPopularName = nameData[0]
+#
+# print(mostPopular)
+# print(mostPopularName)
+# print(secondMostPopular)
+# print(secondMostPopularName)
