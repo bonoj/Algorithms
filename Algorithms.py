@@ -1,5 +1,6 @@
 import time
 import math
+import random
 
 # start_time = time.time()
 #
@@ -656,38 +657,109 @@ import math
 # and all values greater then `v` to the right
 #
 
-import random
+# import random
+#
+# def rank(L, v):
+#     pos = 0
+#     for val in L:
+#         if val < v:
+#             pos += 1
+#     return pos
+#
+# def partition(L, v):
+#     uP = []
+#     lP = []
+#
+#     for i in L:
+#         if i < v:
+#             lP.append(i)
+#         elif i > v:
+#             uP.append(i)
+#     return(lP, [v], uP)
+#
+#     return P
+#
+# def top_k(L, k):
+#     v = L[random.randrange(len(L))]
+#     (left,middle,right) = partition(L, v)
+#     if len(left) == k: return left
+#     if len(left) + 1 == k: return left + middle
+#     if len(left) > k: return top_k(left, k)
+#     return left + middle + top_k(right, k - len(left) - 1)
+#
+# L = [77, 55, 42, 34, 89, 51, 49, 31, 61, 72, 93, 12, 22]
+#
+# # print(partition(L, 34))
+# # print(top_k(L, 6))
+#
+#
+# # del(L[0])
+# # print(L)
+# # lastItem = L.pop(len(L) - 1)
+# # print(lastItem)
+# # print([lastItem] + L)
+# print(L)
+# for i in range(len(L) - 1):
+#     L[0] = L.pop()
+#     print(L)
 
-def rank(L, v):
-    pos = 0
-    for val in L:
-        if val < v:
-            pos += 1
-    return pos
+#
+# Given a list L of n numbers, find the mode
+# (the number that appears the most times).
+# Your algorithm should run in Theta(n).
+# If there are ties - just pick one value to return
+#
+# from operator import itemgetter
+#
 
-def partition(L, v):
-    uP = []
-    lP = []
+####
+# Test
+#
+# import time
+# from random import randint
+#
+# def test():
+#     assert 5 == mode([1, 5, 2, 5, 3, 5])
+#     iterations = (10, 20, 30, 100, 200, 300, 1000, 5000, 10000, 20000, 30000)
+#     times = []
+#     for i in iterations:
+#         L = []
+#         for j in range(i):
+#             L.append(randint(1, 10))
+#         start = time.clock()
+#         for j in range(500):
+#             mode(L)
+#         end = time.clock()
+#         print(start, end)
+#         times.append(float(end - start))
+#     slopes = []
+#     for (x1, x2), (y1, y2) in zip(zip(iterations[:-1], iterations[1:]), zip(times[:-1], times[1:])):
+#         print (x1, x2), (y1, y2)
+#         slopes.append((y2 - y1) / (x2 - x1))
+#     # if mode runs in linear time,
+#     # these factors should be close (kind of)
+#     print(slopes)
 
-    for i in L:
-        if i < v:
-            lP.append(i)
-        elif i > v:
-            uP.append(i)
-    return(lP, [v], uP)
-
-    return P
-
-def top_k(L, k):
-    v = L[random.randrange(len(L))]
-    (left,middle,right) = partition(L, v)
-    if len(left) == k: return left
-    if len(left) + 1 == k: return left + middle
-    if len(left) > k: return top_k(left, k)
-    return left + middle + top_k(right, k - len(left) - 1)
-
-L = [77, 55, 42, 34, 89, 51, 49, 31, 61, 72, 93, 12, 22]
-
-# print(partition(L, 34))
-print(top_k(L, 6))
+#test()
+#
+# def mode(L):
+#     counts = dict()
+#     maxKey = None
+#     maxValue = -1
+#
+#     for i in L:
+#         if i not in counts:
+#             counts[i] = 1
+#         else:
+#             counts[i] += 1
+#         if counts[i] > maxValue:
+#             maxKey = i
+#             maxValue = counts[i]
+#     return maxKey
+#
+#
+# L = [11, 11, 11, 11, 11, 11, 11, 11, 22, 22,
+#      22, 22, 22, 22, 22, 22, 34, 55, 12, 656, 23, 23526, 23, 234, 99, 96, 32, 324, 231]
+#
+# print(mode(L))
 
