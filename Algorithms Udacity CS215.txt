@@ -64,6 +64,12 @@ Each node in a graph is connected to each other node, e.g. a 5 node graph ends u
 
 m = n * (n-1) / 2 which is in Theta(n^2). That is, the growth relationship of m with regards to n is quadratic.
 
+Constant time: Theta(1)
+Logarithmic time: Theta(logn)
+Linear time: Theta(n)
+Slower than linear, but faster than polynomial: Theta(nlogn)
+Polynomial time: Theta(n^2), Theta(n^3), etc...
+
 Tree Graphs:
 -is connected
 -has no cycles or loops.
@@ -235,5 +241,14 @@ Heap Number: positions in the array:
 Parent of some node i at position (i-1) / 2
 Left child of some node i at position 2i + 1
 Right child of some node i at position 2i + 2
+
+
+Computational compleixty is the problem of finding the hardness of problems.
+
+NP: Nondeterministic Polynomial time Decidable problems.
+A problem is in NP if it has a short accepting certificate.
+Accepting Certificate is information we can use to quickly show that the answer is yes (if it actually is yes)
+Quickly: polynomial time
+Short: polynomial size
 
 
