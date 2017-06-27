@@ -870,13 +870,31 @@ class LinkedList(object):
             else:
                 self.head = current.next
 
+    # def delete_first(self):
+    #     "Delete the first (head) element in the LinkedList and return it"
+    #     oldHead = self.head
+    #     current = self.head
+    #     self.head = current.next
+    #     while current:
+    #         if (current.next != None):
+    #             current = current.next
+    #     return oldHead
+
+    # def delete_first(self):
+    #     if self.head:
+    #         deleted_element = self.head
+    #         temp = deleted_element.next
+    #         self.head = temp
+    #         return deleted_element
+    #     else:
+    #         return None
+
     def delete_first(self):
-        "Delete the first (head) element in the LinkedList and return it"
-        current = self.head
-        oldHead = self.head
-        while current.next:
-            current = current.next
-        return oldHead
+        deleted = self.head
+        if self.head:
+            self.head = self.head.next
+            deleted.next = None
+        return deleted
 
 # # print(linkedList.head.value)
 # #
@@ -937,6 +955,18 @@ while i <= 7:
     print(stack.ll.get_position(i).value)
     i += 1
 
+poppedElem = stack.pop()
+print(poppedElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
 poppedElem = stack.pop()
 print(poppedElem.value)
 
