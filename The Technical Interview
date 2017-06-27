@@ -23,7 +23,8 @@ No indices. Each element knows something about the next element (that it is link
 In each element, you store a reference (the memory address) to the next element.
 Insertion is O(1)
 
-Stacks
+Stacks:
+First in, last out.
 
 Queues
 

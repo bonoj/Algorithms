@@ -849,6 +849,14 @@ class LinkedList(object):
             new_element.next = self.head
             self.head = new_element
 
+    def insert_first(self, new_element):
+        # current = self.head
+        # while current:
+        # current.next = current
+        # current = new_element
+        new_element.next = self.head
+        self.head = new_element
+
     def delete(self, value):
         """Delete the first node with a given value."""
         current = self.head
@@ -862,29 +870,73 @@ class LinkedList(object):
             else:
                 self.head = current.next
 
+    def delete_first(self):
+        "Delete the first (head) element in the LinkedList and return it"
+        current = self.head
+        oldHead = self.head
+        while current.next:
+            current = current.next
+        return oldHead
 
+# # print(linkedList.head.value)
+# #
+# # print(linkedList.getLastElem().value)
+# # print(linkedList.get_position(4).value)
+# #
+# # linkedList.delete(5)
+# # print(linkedList.get_position(5).next)
+# # print(linkedList.get_position(5).value)
+#
+# headElem = Element(1)
+# linkedList = LinkedList(headElem)
+#
+# linkedList.append(Element(3))
+# linkedList.append(Element(4))
+# linkedList.append(Element(5))
+# linkedList.insert(Element(2), 2)
+#
+# i = 1
+# while i <= 5:
+#     print(linkedList.get_position(i).value)
+#     i += 1
 
-headElem = Element(5)
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+e4 = Element(4)
+e5 = Element(5)
+e6 = Element(6)
+e7 = Element(7)
 
-linkedList = LinkedList(headElem)
+class Stack(object):
+    def __init__(self,top=None):
+        self.ll = LinkedList(top)
 
-# print(linkedList.head.value)
+    def push(self, new_element):
+        "Push (add) a new element onto the top of the stack"
+        self.ll.insert_first(new_element)
 
-linkedList.append(Element(22))
-linkedList.append(Element(23))
-linkedList.append(Element(24))
+    def pop(self):
+        "Pop (remove) the first element off the top of the stack and return it"
+        return self.ll.delete_first()
 
-# print(linkedList.getLastElem().value)
-# print(linkedList.get_position(4).value)
-linkedList.insert(Element(7), 2)
-linkedList.delete(22)
+stack = Stack(e1)
+# print(stack.ll.head.value)
+stack.push(e2)
+# print(stack.ll.head.value)
+stack.push(e3)
+# print(stack.ll.head.value)
+stack.push(e4)
+stack.push(e5)
+stack.push(e6)
+stack.push(e7)
 
-# print(linkedList.get_position(5).next)
-# print(linkedList.get_position(5).value)
 
 i = 1
-while i <= 4:
-    print(linkedList.get_position(i).value)
+while i <= 7:
+    print(stack.ll.get_position(i).value)
     i += 1
 
-# print(headElem.value)
+poppedElem = stack.pop()
+print(poppedElem.value)
+
