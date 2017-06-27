@@ -763,3 +763,17 @@ import random
 #
 # print(mode(L))
 
+class Person(object):
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def birthday(self):
+        self.age += 1
+
+s = Person("john", 33)
+
+print(s.name)
+print(s.age)
+
+
