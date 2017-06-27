@@ -849,6 +849,20 @@ class LinkedList(object):
             new_element.next = self.head
             self.head = new_element
 
+    def delete(self, value):
+        """Delete the first node with a given value."""
+        current = self.head
+        previous = None
+        while current.value != value and current.next:
+            previous = current
+            current = current.next
+        if current.value == value:
+            if previous:
+                previous.next = current.next
+            else:
+                self.head = current.next
+
+
 
 headElem = Element(5)
 
@@ -862,13 +876,14 @@ linkedList.append(Element(24))
 
 # print(linkedList.getLastElem().value)
 # print(linkedList.get_position(4).value)
-linkedList.insert(Element(7), 3)
+linkedList.insert(Element(7), 2)
+linkedList.delete(22)
 
 # print(linkedList.get_position(5).next)
 # print(linkedList.get_position(5).value)
 
 i = 1
-while i <= 5:
+while i <= 4:
     print(linkedList.get_position(i).value)
     i += 1
 
