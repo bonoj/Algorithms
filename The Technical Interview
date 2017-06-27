@@ -24,13 +24,23 @@ In each element, you store a reference (the memory address) to the next element.
 Insertion is O(1)
 
 Stacks:
-First in, last out.
+First in, last out. (aka Last in, first out.)
+Push to add element to top of stack, pop to remove element from top of stack.
+Both push and pop run in constant time, O(1)
 
-Queues
+Queues:
+First in, first out.
+Add element to tail - Enqueue
+Remove element from head - Dequeue
+Look at head element but don't remove it - Peek
+Like a linked list. Save references to head and tail so you can look them both up in O(1), constant time.
+Priority Queue: assign each element a priority when you insert it into the Queue. This breaks the rules a bit because when you remove, you remove by priority first. If you have two or more with same priority, however, you remove the oldest element first.
 
-Searching and Sorting
 
-Binary Search
+Searching and Sorting:
+Binary Search:
+Look at middle element first, if value you seek is larger, look to right, if smaller, look to left. Again, look at middle of this new array to see if sought value is larger or smaller.
+Efficiency of binary search: O(log(n)) (logarithmic)
 
 Recursion
 
