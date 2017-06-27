@@ -3,19 +3,25 @@ Algorithm - a program that solves a problem.
 
 Introduction and Efficiency
 
-Course Introduction
+Efficiency: also called complexity - how well computer resources of time and space are used
+Time: how long does the code take to run
+Space: how much storage space does your code occupy
 
-Syntax
+Notation of Efficiency - for both time and space efficiency:
 
-Efficiency
+Big O Notation: O(1), O(log(n), O(sqrt(n)) O(n), O(n * log(n)), O(n^2), O(n^3), etc.
+where n is the length of the input to the function. (Size of list or data)
 
-Notation of Efficiency
+List-Based Collections:
 
-List-Based Collections
+Lists/Arrays:
+Arrays: arrays have indices, numbered from 0 to n - 1
+Insertion is O(n)
 
-Lists/Arrays
-
-Linked Lists
+Linked Lists:
+No indices. Each element knows something about the next element (that it is linked to)
+In each element, you store a reference (the memory address) to the next element.
+Insertion is O(1)
 
 Stacks
 

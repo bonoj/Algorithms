@@ -763,29 +763,113 @@ import random
 #
 # print(mode(L))
 
-class Person(object):
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        self.stuff = []
+# class Person(object):
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self.stuff = []
+#
+#     def birthday(self):
+#         self.age += 1
+#
+#     def addItems(self, item):
+#         self.stuff += [item]
+#
+#
+# s = Person("john", 33)
+#
+# print(s.name)
+# print(s.age)
+#
+# s.birthday()
+# print(s.age)
+#
+# s.addItems("algorithms")
+# s.addItems("data structures")
+# print(s.stuff)
 
-    def birthday(self):
-        self.age += 1
 
-    def addItems(self, item):
-        self.stuff += [item]
+class Element(object):
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+
+    def append(self, new_element):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            current.next = new_element
+        else:
+            self.head = new_element
+
+    def getLastElem(self):
+        current = self.head
+        if self.head:
+            while current.next:
+                current = current.next
+            return current
+
+    def get_position(self, position):
+        """Get an element from a particular position.
+        Assume the first position is "1".
+        Return "None" if position is not in the list."""
+        current = self.head
+        i = 1
+        if position < 1:
+            return None
+        if self.head:
+            while current.next and i < position:
+                current = current.next
+                i += 1
+            if i == position:
+                return current
+            else:
+                return None
+
+    def insert(self, new_element, position):
+        """Insert a new node at the given position.
+        Assume the first position is "1".
+        Inserting at position 3 means between
+        the 2nd and 3rd elements."""
+        current = self.head
+        i = 1
+        if position > 1:
+            while current and i < position:
+                if i == position - 1:
+                    new_element.next = current.next
+                    current.next = new_element
+                current = current.next
+                i += 1
+        elif position == 1:
+            new_element.next = self.head
+            self.head = new_element
 
 
-s = Person("john", 33)
+headElem = Element(5)
 
-print(s.name)
-print(s.age)
+linkedList = LinkedList(headElem)
 
-s.birthday()
-print(s.age)
+# print(linkedList.head.value)
 
-s.addItems("algorithms")
-s.addItems("data structures")
-print(s.stuff)
+linkedList.append(Element(22))
+linkedList.append(Element(23))
+linkedList.append(Element(24))
 
+# print(linkedList.getLastElem().value)
+# print(linkedList.get_position(4).value)
+linkedList.insert(Element(7), 3)
 
+# print(linkedList.get_position(5).next)
+# print(linkedList.get_position(5).value)
+
+i = 1
+while i <= 5:
+    print(linkedList.get_position(i).value)
+    i += 1
+
+# print(headElem.value)
