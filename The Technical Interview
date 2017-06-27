@@ -42,7 +42,14 @@ Binary Search:
 Look at middle element first, if value you seek is larger, look to right, if smaller, look to left. Again, look at middle of this new array to see if sought value is larger or smaller.
 Efficiency of binary search: O(log(n)) (logarithmic)
 
-Recursion
+Recursion:
+Function calls itself. Base case tells the function when to stop recurring and return
+
+Sorting:
+Changing order of elements according to same rule, shortest to tallest, biggest to smallest, etc.
+Can compare every element to every other element - naive approach. Works but slow and inelegant
+For interviews: Have runtimes memorized to answer complexity problems really quickly. Also, consider whether the sorting algorithm is in-place or not. In-place sorting has low space complexity since there is no need to recreate the data structure, however the trade off is often for higher time complexity. With small arrays, this makes no difference. But with arrays of millions or billions of numbers, for instance...
+Also, something to consider, in-place sorting is destructive... destroys the input array by replacing it with the sorted array.
 
 Bubble Sort
 
