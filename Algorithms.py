@@ -767,13 +767,25 @@ class Person(object):
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        self.stuff = []
 
     def birthday(self):
         self.age += 1
+
+    def addItems(self, item):
+        self.stuff += [item]
+
 
 s = Person("john", 33)
 
 print(s.name)
 print(s.age)
+
+s.birthday()
+print(s.age)
+
+s.addItems("algorithms")
+s.addItems("data structures")
+print(s.stuff)
 
 
