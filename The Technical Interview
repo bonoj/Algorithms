@@ -79,9 +79,17 @@ Sets: comparable to a list, but big difference: Lists have some kind of ordering
 Maps: Maps are also called dictionaries.
 Maps contain unique keys, and the keys in a map with no order are called a set.
 
-Hashing
+Hashing:
+Data structures that employ hash functions allow you to do lookups in O(1) constsant time.
+Hash function transforms a value into a hash value based on some formula and spits out a coded version that's often the index of an array.
 
-Collisions
+Collisions:
+When a hash function spits out the same hash value for two different inputs.
+Fixes:
+1. Change the value in your hash function, or change the function completely - this requires moving to new arrays everytime you have a collision, which increases complexity of both time and space, but especially space. This is still O(1)
+2. Change the structure of your array, like storing a collection in a bucket at each slot rather than the value itself. Here we'll iterate through small containers after looking up the container, which adds a bit of time. Best case, O(m) where m is the size of the bucket you look up in constant time. Worst case, this can end up as O(n) if all of your values end up in separate buckets.
+Often when building a hash, you must choose between these two... take up much more space, search faster or take up less space, but take more time to search.
+Could also use a hash within a hash to hash the buckets.
 
 Hashing Conventions
 

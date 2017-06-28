@@ -79,3 +79,6 @@ asia_sorted = sorted(asia_cities)
 for city in asia_sorted:
     print(city)
 
+# Hash Functions
+
+
