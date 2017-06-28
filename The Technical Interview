@@ -51,15 +51,33 @@ Can compare every element to every other element - naive approach. Works but slo
 For interviews: Have runtimes memorized to answer complexity problems really quickly. Also, consider whether the sorting algorithm is in-place or not. In-place sorting has low space complexity since there is no need to recreate the data structure, however the trade off is often for higher time complexity. With small arrays, this makes no difference. But with arrays of millions or billions of numbers, for instance...
 Also, something to consider, in-place sorting is destructive... destroys the input array by replacing it with the sorted array.
 
-Bubble Sort
+Bubble Sort:
+Naive approach: Smallest to largest.
+Compare first two elements, if first is bigger, switch them. Now compare second and third element. Switch if needed. Once again, third and fourth elements. And so on.
 
-Merge Sort
+In each iteration, the largest element in the array "bubbles up" to the top (to the last element in the array)
 
-Quick Sort
+Naive Bubble Sort = O(n^2), polynomial time, in-place sorting, space complexity: O(1)
 
-Maps and Hashing
+Merge Sort:
+Split a huge array down as much as possible, then overtime rebuild it, sorting all the parts with each rebuilding. Divide and conquer.
+Time efficiency: O(n * log(n))
+Space complexity / Auxilliary space: O(n)
 
-Maps
+Quick Sort:
+One of the most efficient sorting algorithms, but bad with arrays that are already nearly sorted.
+Pick one of the values in the array at random (convention is to pick last element in the array), move all values smaller below it, all values larger above it. Continue recursively, picking a pivot in upper and lower array, sorting them similarly until the whole array is sorted.
+Time efficiency: worst case O(n^2), best case O(n * log(n))
+Space complexity: O(1) - in-place sorting.
+
+Splitting array can sort more quickly.
+
+
+Maps and Hashing:
+Sets: comparable to a list, but big difference: Lists have some kind of ordering. Sets don't have ordering, but they contain only unique elements. A map is a set-based data structure, an array is a list-based data structure. The keys in a map are a set.
+
+Maps: Maps are also called dictionaries.
+Maps contain unique keys, and the keys in a map with no order are called a set.
 
 Hashing
 
