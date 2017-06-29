@@ -140,7 +140,6 @@ Search: O(n), must go through every single element if value you're seeking doesn
 Delete: Often starts with a search. Deleting a leaf is quick and easy, but deleting a node with multiple children is trickier. But again, O(n). Linear runtime.
 Insert: Easy, just tack it onto another node as long as we obey the no more than two children per nodes. O(logn). Logarithmic runtime. Worst case scenario is traversing down the longest path to last open node, down the levels.
 
-
 Heaps
 
 Self-Balancing Trees
