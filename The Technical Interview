@@ -92,16 +92,51 @@ Often when building a hash, you must choose between these two... take up much mo
 Could also use a hash within a hash to hash the buckets.
 
 Hashing Conventions
+Load Factor = Number of Entries / Number of Buckets
 
-Trees
+Hashing? - Hash Table
+Algorithm? - Hash Map - for constant time look ups to speed up the code.
 
-Trees
+String Keys:
+Like ASCII, A = 65, B = 66, C = 67...
+30 or fewer words, you can pobably get away with just ASCII value for first letter of a string as a hash value.
 
-Tree Traversal
+31 as a hash value is a convention, rather than the best value.
 
-Binary Trees
+Hash Maps:
 
-Binary Search Trees
+Trees:
+
+Trees:
+Trees start from a place called a Root. Data added called Branches. Bottom of Trees are called Leaves. Collection of Trees is called a Forest.
+
+Trees are like LinkedLists, each node contains references to its children.
+
+All elements in a tree are connected, but there are no cycles allowed.
+
+Levels: Root at level 1, nodes connected to root are level 2, and so on down. Ancestor / parent, descendant / children.
+Nodes at the end with no children are called Leaves or external nodes.
+A parent node is called an internal node.
+Connections are called Edges. Multiple edges are called a path. The height of a node is the number of edges between it and the furthest leave on that branch. A leaf has a height of zero, its parent has a height of one.
+The height of a tree over all is the height of a root. The depth of a node is the number of edges to the root. Depth is the inverse of height.
+
+Tree Traversal:
+DFS - Depth first search: if there are children nodes to explore, exploring them is the priority.
+Pre-Order Traversal - check off a node as soon as you see it, before you traverse any further in the tree. Start at root, check it off immediately, then check one of the children, normally the leftmost by convention. Check it off. Then continue traversing down the leftmost child nodes of each parent until you hit a leaf, then you go back up to the parent and over to the right leaf, and check it off, too. Then back up to the parent that has more children, down the left again if unchecked, then right, etc.
+
+In-Order Traversal - Can only check off a node once we've seen its left child and come back to it, all the way down to left most leaf first. Then back up to the parent, check it off, then down to the right leaf, check it off, then back up to the parent's parent. We go more or less through all nodes on left first, then right, as we cross the tree.
+
+Post-Order Traversal - Can only check off a node until we've seen all of its descendants, or we've visited both of its children and returned. So down to a leaf first, check it off, then to the right leaf, check it off, then back to parent to check it off. Root gets checked off very last.
+
+
+BFS - Breadth first search: visit every node on the same level before visiting children nodes.
+Level Order Traversal - start at the root, then visit its children on the second level, then visit their children on the 3rd level, until you've visited every single leaf. By convention, start on the left most node and move to the right.
+
+Binary Trees:
+Trees where parents have at most 2 children. Can have zero, one, or two children.
+
+Binary Search Trees:
+
 
 Heaps
 
