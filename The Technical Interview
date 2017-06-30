@@ -329,9 +329,46 @@ We give all vertices a distance value, which is the sum of edge weights between 
 Worst case runtime: O(|V|^2)
 
 Knapsack Problem
+Theoretical knapsack with a limited weight capacity and more items than can possibly fit. Each item has a weight and a value. Question is: How can I optimize the total value of items given the weight constraint.
+
+The 0-1 Knapsack problem, you only have 1 of each object, and you must either take or leave a whole object.
+
+Brute force solution: Try every combination of objects and pick the one that's best, runtime is exponential time, O(2^n) where n is the number of objects.
+
+Would prefer a polynomial time O(n^2), or O(n^3), etc or even O(3n).
+
+A faster algorithm for the knapsack problem:
+What if we try to max value for the min weights and keep adding together until we reach the max weight?
+Create array for maximum possible value for each weight up to our weight limit.
+
+objects with (weight,value): (2,6), (5,9), (4,5)
+
+Index 1 2 3 4 5 6 (max weight)
+Value 0 0 0 0 0 0
+        6 6 6 9 11
+
+The trick here is to take advantage of the table to store maximum values, so we only do the work once to get those numbers.
+
+With this method, the runtime like this is O(nW) where W = weight limit and n = number of elements.
+
+A pseudo-polynomial time solution. Generally faster than exponential time solutions.
+
+With dynamic programming:
+Base case: Smallest compution (compute values for one object)
+Use lookup table.
+Then use an equation at each step as you add complexity. Equation often combines some value previously stored in a lookup table.
+Memoization: storing pre-computed values.
+
+For dynamic programming, "Can I break this problem into subproblems?" If yes, the problem has a dynamic programming solution.
 
 
-Traveling Salesman Problem
+Traveling Salesman Problem, aka TSP:
+Envision a graph where all the nodes are cities, all the edges are roads between them. What's the fastest way for our salesman to visit every city and return home?
+Boiled down: Find optimal route of a complicated graph.
+Optimization.
+This is an NP-Hard problem. There is no known algorithm that can solve them in polynomial time.
+
+
 
 Technical Interview Tips
 
