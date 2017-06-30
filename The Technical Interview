@@ -218,12 +218,33 @@ Case 5: Then do a right rotation to balance the tree.
 
 Insert, search, and delete are O(logn) in the worst cases for Red-Black Trees.
 
-Graphs:
+Graphs / Networks:
+A data structure designed to show relationships between objects.
+(A tree is a type of graph)
 
+Graph Properties:
+Graphs have nodes or vertices.
+Graphs have edges. Edges connect nodes. Nodes connected by edges are called adjacent.
+Graphs can have cycles.
 
-Graph Properties
+Both nodes and edges can contain data.
+Edges often contain data about the strength of a connection.
 
-Graph Representation
+Edges can have a direction, meaning the relationship only applies one way but not in the other. These are called Directed Graphs.
+
+Graph Representation:
+
+Directions:
+Travel example:
+SF -> Tokyo
+From SF (noun, node) travel to (verb, edge, with direction) Tokyo (noun, node)
+
+Cycles:
+A cycle happens if you can travel from one node to others and then return to that node by a different path. Cycles are dangerous because they can lead to infinite loops.
+On a Directed Graph, you might have two edges between each node, if different information is flowing in each direction.
+An undirected graph has no directional information contained in its edges. It would just have one edge between nodes.
+Often need to make sure you're taking in an acyclic graph as input.
+DAG = Direct Acyclic Graph
 
 Graph Traversal
 
