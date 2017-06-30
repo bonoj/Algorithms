@@ -918,55 +918,116 @@ class LinkedList(object):
 #     print(linkedList.get_position(i).value)
 #     i += 1
 
-e1 = Element(1)
-e2 = Element(2)
-e3 = Element(3)
-e4 = Element(4)
-e5 = Element(5)
-e6 = Element(6)
-e7 = Element(7)
+# e1 = Element(1)
+# e2 = Element(2)
+# e3 = Element(3)
+# e4 = Element(4)
+# e5 = Element(5)
+# e6 = Element(6)
+# e7 = Element(7)
+#
+# class Stack(object):
+#     def __init__(self,top=None):
+#         self.ll = LinkedList(top)
+#
+#     def push(self, new_element):
+#         "Push (add) a new element onto the top of the stack"
+#         self.ll.insert_first(new_element)
+#
+#     def pop(self):
+#         "Pop (remove) the first element off the top of the stack and return it"
+#         return self.ll.delete_first()
+#
+# stack = Stack(e1)
+# # print(stack.ll.head.value)
+# stack.push(e2)
+# # print(stack.ll.head.value)
+# stack.push(e3)
+# # print(stack.ll.head.value)
+# stack.push(e4)
+# stack.push(e5)
+# stack.push(e6)
+# stack.push(e7)
+#
+#
+# i = 1
+# while i <= 7:
+#     print(stack.ll.get_position(i).value)
+#     i += 1
+#
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+# poppedElem = stack.pop()
+# print(poppedElem.value)
+#
 
-class Stack(object):
-    def __init__(self,top=None):
-        self.ll = LinkedList(top)
+# Reverse a string
+string = "This is a string!"
+print(string)
 
-    def push(self, new_element):
-        "Push (add) a new element onto the top of the stack"
-        self.ll.insert_first(new_element)
+newStringArray = []
+newString = ""
+i = len(string) - 1
+while(i >= 0):
+    newStringArray.append(string[i])
+    i -= 1
+for j in newStringArray:
+    newString += j
+print(newString)
+print("\n")
 
-    def pop(self):
-        "Pop (remove) the first element off the top of the stack and return it"
-        return self.ll.delete_first()
+# Write a Bubble Sort
+# My first hacky recursive attempt, end up with a reversed sort, largest to smallest.
 
-stack = Stack(e1)
-# print(stack.ll.head.value)
-stack.push(e2)
-# print(stack.ll.head.value)
-stack.push(e3)
-# print(stack.ll.head.value)
-stack.push(e4)
-stack.push(e5)
-stack.push(e6)
-stack.push(e7)
+def bubbleSort(testArray, returnedArray):
+
+    # print(testArray)
+
+    if(len(testArray)) == 0:
+        return "Sorted!"
+
+    sortedArray = []
+    i = 0
+    while i < len(testArray):
+        # print(i, testArray[i - 1], testArray[i])
+        if i == 0:
+            sortedArray.append(testArray[i])
+        else:
+            # print(i - 1)
+            if sortedArray[i - 1] > testArray[i]:
+                temp = sortedArray[i - 1]
+                sortedArray[i - 1] = testArray[i]
+                sortedArray.append(temp)
+            else:
+                sortedArray.append(testArray[i])
+        i += 1
+
+    returnedArray.append(sortedArray[len(sortedArray) - 1])
+    return bubbleSort(sortedArray[0:len(sortedArray) - 1], returnedArray)
+
+myArray = [5, 101, 12, 21, 56, 48, 52, 66, 67, 86, 29, 92, 23, 14, 11, 62, 93, 122]
+mySortedArray = []
+print(myArray)
+print(bubbleSort(myArray, mySortedArray))
+print(mySortedArray)
+
+print("\n")
+
+def newBubbleSort(input):
+    return input
+
+print(newBubbleSort(myArray))
 
 
-i = 1
-while i <= 7:
-    print(stack.ll.get_position(i).value)
-    i += 1
 
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
-poppedElem = stack.pop()
-print(poppedElem.value)
 
