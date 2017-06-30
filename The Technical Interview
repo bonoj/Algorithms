@@ -232,7 +232,16 @@ Edges often contain data about the strength of a connection.
 
 Edges can have a direction, meaning the relationship only applies one way but not in the other. These are called Directed Graphs.
 
-Graph Representation:
+Connectivity:
+Has a specific meaning in Graph Theory, but first a definition:
+Disconnected graph means some portion of the graph is not connected to another.
+A connected graph has no disconnected nodes.
+
+Disconnected: A-B C-D-E
+Connected: A-B-C-D-E
+
+Connectivity: a way to describe a graph as a whole... a graph with a lot of connections between nodes is a graph with a lot of connectivity. Is more robust as well, can remove a node without destroying the graph or causing it to become disconnected.
+Connectivity is the minimum number of elements that must be removed to cause a graph to become disconnected. Connectivity can sometimes be used to answer the question, "Which graph is stronger." Strongly connected graphs (cliques) must have a path from every node to every other node.
 
 Directions:
 Travel example:
@@ -246,7 +255,56 @@ An undirected graph has no directional information contained in its edges. It wo
 Often need to make sure you're taking in an acyclic graph as input.
 DAG = Direct Acyclic Graph
 
-Graph Traversal
+Graph Representations:
+Graphs can be functionally the same, but built in a number of different ways.
+In OOP, graphs can have both vertex and edge objects. Each can have properties, for instance:
+Vertex Object might have name, id, list of connected edges
+Edge Object might have strength, id, list of connected vertices
+
+Operations that traverse graphs can be more inconvenient if you must search through both nodes and edges.
+
+One example of a simple graph that only uses lists:
+Edge List: [[0,1], [1, 2], [1, 3], [2, 3]]   (The numbers correspond to ID numbers for the vertices)
+
+0 - 1 - 2
+    | /
+    3
+
+Sometimes called a 2D list. A list of lists of lists would be a 3D list.
+
+Adjacency List for the graph above (again a 2D list):
+[[1], [0,2,3], [1,3], [1,2]]
+Array index = node id, then the values in that list are the ids of the other nodes that the node at that index is connected to. Here, node 0 is connected only to node 1, whereas node 1 is connected to nodes 0, 2, and 3.
+
+Adjacency MAtrix:
+
+[[0,1,0,0]
+ [1,0,1,1]
+ [0,1,0,1]
+ [0,1,1,0]]
+
+A matrix, also called a rectangular array, is a 2d array where all of the internal lists are the same length. The adjacency Matrix is really similar to the adjacency list, but information is represented differently. The inner lists now have one slot for every node in the graph. The indices of this array correspond to the edge connections, 0 for not connected, 1 for connected. The place where the row and column are the same (node 0 row, node 0 column for instance) is always 0, unless there is an edge that starts at that node and returns immediately to it in a loop. In the graph above, we see the list for node 0 shows connection to node 1, but no connection to 2 or 3. Node 1, the second list in the matrix, has connections to nodes 0, 2, and 3, but not to itself.
+
+Important note: a single edge will show up twice in the matrix. Once for each node sharing that connection.
+
+
+Graph Traversal:
+Similar to tree traversal. Two basic methods, depth first search and breadth first search.
+DFS: follow one path as far as it wil go.
+BFS: look at all the node adjacent to a node before moving on to the next.
+
+A traversal visits every node on a graph
+A search is a traversal where you stop at the element you were seeking.
+
+Depth First Search:
+There's no root in a graph, so we can start anywhere. First mark the node we've selected as seen. Common implentations use the Stack.
+So we mark the node as seen, add it to the stack.
+Next, pick an edge, follow it, mark node as seen, and add it to the stack.
+
+We explicitly visit each edge and vertex once in this algorithm, so runtime is O(|E| + |V|).
+
+BFS: Done with Queue instead of Stack. Explore all adjacent nodes first, marking each node as seen and adding them to a queue. When we run out of edges, we deque that first node and check all adjacent nodes to it.
+
 
 Graph Paths
 
