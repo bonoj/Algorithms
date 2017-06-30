@@ -167,12 +167,59 @@ It's called an unbalanced tree since the distribution of nodes is skewed, in thi
 Unbalanced is the worst case scenario for a BST, because here Search, Insert, and Delete all take linear time.
 
 Heaps
+A specific type of tree:
+Elements are arranged in increasing or decreasing order, such that the root element is either the maximum value (max heap) or minimum value (min heap) in the tree.
 
-Self-Balancing Trees
+Max Heap: a parent must always have a greater value than its child
+Min Heap: a parent must always have a lesser value than its child
 
-Graphs
+Search, insert, and delete can vary a lot based on type of heap.
 
-Graphs
+Heaps are not necessarily binary.
+
+Binary heap must be a complete tree. All levels except the last level are completely full. If last level isn't totally full, values are added from left to right.
+
+Function to get maximum value is called Peek. Runs in O(1) constant time for Binary heap.
+Searching is linear O(n) worst case, Average case is about O(n/2) which is still approximately O(n). However, we can use the max heap properties to our advantage. For instance, if we are searching for a value larger than our max, then we can quit immediately without searching, we know it isn't in our tree.
+
+Insertion: we stick the new element into the next open spot in the tree and then call Heapify.
+Heapify is a function that reorders the tree based on the heap property. All we need to do to heapify up is compare the parent to its children and swap them until the heap properties are satisfied.
+
+Extraction: Similar, stick the rightmost leaf into the spot where there is a value that must be removed from the heap. Then we compare it to its children and swap where necessary.
+
+Runtime of insert and delete is O(logn) in the worst case. (moving an item up or downthe entire height of the tree)
+
+Heap Implementation: Often represented as trees, but stored as arrays.
+Arrays sorted in descending order can easily be turned into max heaps.
+Arrays sorted in ascending order can easily be turned into min heaps.
+
+Heaps are often stored in arrays because it saves space. When stored as a Tree, must store the value and pointers to left child, right child, and parent of each node. When stored as an array, only need to store value and the index in the array. Children and parents can be recovered from the index based on array index.
+
+Self-Balancing Trees:
+A balanced tree has nodes condensed to only a few levels. Unbalanced trees have nodes spread out amongst many levels. The most unbalanced tree is really just a LinkedList, where every node has only one child.
+
+A self-balancing tree does some additional operations during insertion and deletion to keep itself balanced, the nodes themselves sometimes have some additional properties.
+
+Red-Black Tree (A kind of self-balancing tree):
+1. Nodes are assigned an additional color property where the nodes are either red or black. The use of color is just a convention, you really just need a way to distinguish between two different types of nodes.
+2. Second property is the existence of null leaf nodes. Every node that does not have two leaves already must have null children.
+3. Null leaf nodes are black. If a node is red, both children must be black.
+4. Additional optional rule, root node must be black.
+5. Every path from a node to its descendant null nodes must contain the same number of black nodes.
+
+Red-Black Tree Insertion:
+Upon insertion, tree must reorder itself to follow both Red-Black Tree and Binary Search Tree rules.
+Insert a node only as a red node.
+Null nodes are always added if there are no children or one null node and one child.
+Case 1: insert node as red, then change to black if following the root must be black rule.
+Case 2: when two children are inserted as red, they are switched to black and their parent becomes red. Root may change to red, but is then changed back to black.
+Case 4: Perform left rotation shifting nodes one place to left if there are children on right side.
+Case 5: Then do a right rotation to balance the tree.
+
+Insert, search, and delete are O(logn) in the worst cases for Red-Black Trees.
+
+Graphs:
+
 
 Graph Properties
 
