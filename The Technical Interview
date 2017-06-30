@@ -368,9 +368,45 @@ Boiled down: Find optimal route of a complicated graph.
 Optimization.
 This is an NP-Hard problem. There is no known algorithm that can solve them in polynomial time.
 
+Exact Algorithms get exact answer, but take a long time to run, not in polynomial time.
+Appromation Algorithms don't get exact answers, but generally run in polynomial time.
+
+The brute force solution to the Traveling Salesman Problem has same philosophy as knapsack, find every possible combination and pick the best one. It takes significantly longer, in O(n!) (n * (n-1) * (n-2) * etc, all the way down to 3, 2, 1)
+
+Dynamic programming: Held-Karp Algorithm runtime: O(n^2 * 2^n) quite slow also, exponential time.
+
+Christofides Algorithm - turns a graph into a tree, starting node is a root, creating and traversing through the tree in an intelligent way.
+Solution is an approximation, which will be at most 50% longer than the shortest path
 
 
-Technical Interview Tips
+Technical Interview Tips: Interviewer is on your side. They are there to collaborate, to give suggestions and cues to guide you. Communicate with them, listen to their feedback.
+
+Steps to an Algorithms interview:
+1. Clarifying the question
+Confirm that the question is understood completely, and ask about any special cases to be sure you understand what the interviewer is asking for, and to make sure the interviewer sees you think carefully before blindly implementing.
+
+2. Generating inputs and outputs
+Describes the signature of the algorithm, so we are clear exactly what arguments the function will take, and what the function will return.
+Also reconfirms the question.
+
+3. Generating test cases
+Think of possible edge cases, including null and empty inputs. Another great chance to reconfirm that you and the interviewer are on the same page about what forms all possible inputs might take.
+
+4. Brainstorming
+Begin by describing how you might handle those edge cases, like null and empty inputs, like returning zero.
+Talk about setups, like counter variables necessary, perhaps additional arrays, temporary storage variables, etc.
+Talk about how the algorithm might work.
+Figure out what data structure is most appropriate.
+
+5. Runtime analysis
+Make an analysis of the runtime and talk about any space complexities if additional arrays are being created.
+
+6. Coding
+Talk out loud and explain your thought processes and the purpose of your code as you write. Avoid reading your code verbatim. By talking aloud, inverviewer has a chance to jump in and help if your logic has problems. You also prove to the interviewer that you're actually thinking through all of your code and not just regurgitating a memorized answer.
+
+7. Debugging
+Step through entire code with edge cases and test cases and make sure nothing was missed. This also shows your interviewer that you check your code thoroughly.
+
 
 Mock Interview Breakdown
 
