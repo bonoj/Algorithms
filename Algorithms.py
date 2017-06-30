@@ -1050,7 +1050,23 @@ def ascendingInlineBubbleSort(input):
 print("Ascending Recursive Inline Bubble Sort")
 print(ascendingInlineBubbleSort(myArray))
 
+print("\n")
 
+def inlineIterativeBubbleSort(input):
+    for j in range(len(input)):
+
+        i = 0
+        while i < len(input):
+            if i != 0:
+                if input[i - 1] > input[i]:
+                    temp = input[i - 1]
+                    input[i - 1] = input[i]
+                    input[i] = temp
+            i += 1
+    return input
+
+print("Inline Iterative Bubble Sort")
+print(inlineIterativeBubbleSort(myArray))
 
 
 

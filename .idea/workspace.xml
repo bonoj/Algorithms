@@ -17,11 +17,11 @@
       <file leaf-file-name="Algorithms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Algorithms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1193">
-              <caret line="1052" column="0" lean-forward="true" selection-start-line="1052" selection-start-column="0" selection-end-line="1052" selection-end-column="0" />
+            <state relative-caret-position="1353">
+              <caret line="1067" column="24" lean-forward="false" selection-start-line="1067" selection-start-column="24" selection-end-line="1067" selection-end-column="24" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1498800936391" expanded="true" signature="3968:4043" ph="..." />
+                <marker date="1498804022339" expanded="true" signature="3968:4043" ph="..." />
               </folding>
             </state>
           </provider>
@@ -443,7 +443,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1498800936391" expanded="true" signature="3968:4043" ph="..." />
+            <marker date="1498804022339" expanded="true" signature="3968:4043" ph="..." />
           </folding>
         </state>
       </provider>
@@ -507,11 +507,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Algorithms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1193">
-          <caret line="1052" column="0" lean-forward="true" selection-start-line="1052" selection-start-column="0" selection-end-line="1052" selection-end-column="0" />
+        <state relative-caret-position="1353">
+          <caret line="1067" column="24" lean-forward="false" selection-start-line="1067" selection-start-column="24" selection-end-line="1067" selection-end-column="24" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1498800936391" expanded="true" signature="3968:4043" ph="..." />
+            <marker date="1498804022339" expanded="true" signature="3968:4043" ph="..." />
           </folding>
         </state>
       </provider>
