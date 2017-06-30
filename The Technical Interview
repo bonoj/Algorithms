@@ -305,14 +305,31 @@ We explicitly visit each edge and vertex once in this algorithm, so runtime is O
 
 BFS: Done with Queue instead of Stack. Explore all adjacent nodes first, marking each node as seen and adding them to a queue. When we run out of edges, we deque that first node and check all adjacent nodes to it.
 
+Runtime is O(|E| + |V|).
 
-Graph Paths
 
-Case Studies in Algorithms
+Graph Paths:
+Eulerian path: Traversal that travels through each edge only once.
+Eulerian cycle/tour: Traverse every path only once and end up at same node you started.
+Runtime: O(|E) since it only visits each edge once.
 
-Shortest Path Problem
+Hamiltonian path: Visits every vertex once.
+Hamiltonian cycle: Visits every vertex once, starts and ends on the same vertex.
+
+Case Studies in Algorithms:
+
+Shortest Path Problem:
+Find the shortest path in a graph. Weighted edges. The shortest path between two nodes is the one where the sum of the edges is as small as possible. With an unweighted graph, the shortest path is just the path with the fewest edges.
+
+Shortest path solution for unweighted graph is just a breadth first search.
+
+Dijkstra's Algorithm: A solution to the shortest path problem for weighted undirected graphs.
+We give all vertices a distance value, which is the sum of edge weights between our starting point and whatever vertex we're on. At the end of the algorithm, this distance will be the distance of the shortest path. We start with infinity for the distance value. Node we start with has a distance of 0. Min priority queue: element with min priority (min distance in this case), can be removed efficiently with the "Extract Min" function. So right away we extract the starting node, distance of zero. From starting node, we follow each edge and update the node on the other side with a distance value, which is just the weight of the edge. Which node to visit? Always visit node with the smallest value. Because we always pick the node with the lowest distance, Dijkstra's is called a Greedy algorithm. Philosphy is pick whatever looks best at the moment. We keep going, extracting the minimum from our queue, always following edges with smallest weights, updating our distance if we find a shorter path to a node.
+
+Worst case runtime: O(|V|^2)
 
 Knapsack Problem
+
 
 Traveling Salesman Problem
 
