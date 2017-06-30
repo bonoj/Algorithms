@@ -972,7 +972,8 @@ class LinkedList(object):
 #
 
 # Reverse a string
-string = "This is a string!"
+print("Reversing Strings")
+string = "Satan oscillate my metallic sonatas"
 print(string)
 
 newStringArray = []
@@ -988,7 +989,6 @@ print("\n")
 
 # Write a Bubble Sort
 # My first hacky recursive attempt, end up with a reversed sort, largest to smallest.
-
 def bubbleSort(testArray, returnedArray):
 
     # print(testArray)
@@ -1015,18 +1015,43 @@ def bubbleSort(testArray, returnedArray):
     returnedArray.append(sortedArray[len(sortedArray) - 1])
     return bubbleSort(sortedArray[0:len(sortedArray) - 1], returnedArray)
 
+def descendingBubbleSort(testArray):
+    output = []
+    bubbleSort(testArray, output)
+    return output
+
+print("Descending Recursive Bubble Sort")
 myArray = [5, 101, 12, 21, 56, 48, 52, 66, 67, 86, 29, 92, 23, 14, 11, 62, 93, 122]
-mySortedArray = []
-print(myArray)
-print(bubbleSort(myArray, mySortedArray))
-print(mySortedArray)
+print(myArray, "\nSorting...")
+print(descendingBubbleSort(myArray))
 
 print("\n")
 
-def newBubbleSort(input):
-    return input
+def inlineBubbleSort(input, j):
 
-print(newBubbleSort(myArray))
+    if j == 0:
+        return input
+
+    i = 0
+    while i < len(input):
+        if i != 0:
+            if input[i - 1] > input[i]:
+                temp = input[i - 1]
+                input[i - 1] = input[i]
+                input[i] = temp
+        i += 1
+    # return input
+    return inlineBubbleSort(input, j-1)
+
+def ascendingInlineBubbleSort(input):
+    return(inlineBubbleSort(input,len(input)))
+
+# print(inlineBubbleSort(myArray, len(myArray)))
+print("Ascending Recursive Inline Bubble Sort")
+print(ascendingInlineBubbleSort(myArray))
+
+
+
 
 
 
