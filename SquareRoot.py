@@ -50,3 +50,35 @@ if (foundSolution):
 else:
     print("No solution found.")
 
+
+
+
+def root(x, n):
+    if (x == 0):
+        return 0
+
+    lowerBound = 0
+    upperBound = max(1, x)
+    approxRoot = (upperBound + lowerBound) / 2
+
+    while (approxRoot - lowerBound >= 0.001):
+        if (math.pow(approxRoot, n) > x):
+            upperBound = approxRoot
+        elif (math.pow(approxRoot, n) < x):
+            lowerBound = approxRoot
+        else:
+            break
+
+        approxRoot = (upperBound + lowerBound) / 2
+
+    return approxRoot
+
+print(root(81,2))
+
+
+x = 64
+n = 3
+
+# what * what * what = 64?
+
+
