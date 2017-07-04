@@ -10,23 +10,103 @@
 
 # Naive Bayes - common algorithm to find a decision surface
 
-import numpy as np
+# import numpy as np
+#
+# # Features
+# X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+# # Labels
+# Y = np.array([1, 1, 1, 2, 2, 2])
+#
+# from sklearn.naive_bayes import GaussianNB
+# from sklearn.metrics import accuracy_score
+#
+# clf = GaussianNB()
+# # classify a fit for (features, labels)
+# clf.fit(X, Y)
+# GaussianNB()
+#
+# prediction = clf.predict([[-0.8, -1]])
+# print(prediction)
+#
+# # accuracy = number of points classified correctly / all points (in test set)
+# # use sklearn.metrics.accuracy_score
+#
+# # Always train and test on different data sets.
+# # Save ~10% of data to be used for testing, don't feed this into the learning set.
+#
+# # Bayes Rule - The Holy Grail of probabilistic inference.
+# # Fun fact: Rev Thomas Bayes used this principle to infer the existence of god
+#
+# # An example:
+# # The probability P that a person has this specific cancer C is P(C) = 0.01
+# # 90% of positive tests indicating that a person has C are accurate, this is the sensitivity.
+# # 10% of positive tests are false positives.
+# # 90% of negative tests are accurate if you don't have C. This is called the specificity
+#
+# # Bayes Rule:
+# # prior probability with incorporated test evidence leads to a posterior probability
+# #
+# # prior:    P(C) = 0.01 = 1%
+# #           P(Pos|C) = 0.9 = 90%
+# #           P(!C) = 0.99 = 99%
+# #           P(Neg|!C) = 0.9 = 90%
+# #           P(Pos|!C) = 0.1 = 10%
+#
+# # posterior: P(C|Pos.) = P(C) * P(Pos|C) = 0.009
+# # posterior: P(!C|Pos.) = P(!C) * P(Pos|!C) = 0.099
+# # posterior also called joint probability of events
+#
+# # normalization, 2 steps: keep ratio same but make sure they add to 1.
+# p1 = 0.009
+# p2 = 0.099
+# # normalizer: P(Pos) = P(C, Pos) + P(!C, Pos) = 0.108
+# normalizer = p1 + p2
+# print(p1 / normalizer)
+# # P(C|Pos) = 0.0833
+# print(p2 / normalizer)
+# # P(!C|Pos) = 0.9167
+#
+# print((p1 + p2) / normalizer)
+# # 1
+#
+# # Bayes Rule used often for Text Learning, which is learning from documents
+# # Also called Naive Bayes - Bayesian Probabilities
+#
+# pC = 0.5
+# pS = 0.5
+#
+# ldC = pC * .8 * .1
+# ldS = pS * .5 * .2
+#
+# normalizer = ldC + ldS
+# print(ldC / normalizer)
+# print(ldS / normalizer)
 
-# Features
-X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
-# Labels
-Y = np.array([1, 1, 1, 2, 2, 2])
 
-from sklearn.naive_bayes import GaussianNB
-from sklearn.metrics import accuracy_score
 
-clf = GaussianNB()
-# classify a fit for (features, labels)
-clf.fit(X, Y)
-GaussianNB()
 
-prediction = clf.predict([[-0.8, -1]])
-print(prediction)
 
-# accuracy = number of points classified correctly / all points (in test set)
-# use sklearn.metrics.accuracy_score
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Support Vector Machines
+
+
+# Selecting a Supervised Classification Algorithm:
+# Naive Bayes - very easy to implement, very efficient to run
+# - dangers: Phrases that encompass multiple words don't do well, can't handle word order
+# SVMs - Support Vector Machines -
+
