@@ -108,7 +108,20 @@ clf.fit(X, y)
 print(clf.predict([[2., 2.]]))
 
 # SVM with Nonlinear Data
+# for a case where class 1 clusters around origin and class 2 is dotted all around
+# z = x^2 + y^2 allows us encircle the class 1 data in the center
+# to build a new graph, one where class 2 always has a
+# higher z value than class 1, and now we can draw a line.
 
+# We can add another feature, too. Take the absolute value of one of the coordinates,
+# if it makes sense with the data.
+
+# The Kernel Trick
+# There are functions that take a low dimensional feature space (x,y)
+# And map it to a very high dimensional space (xsub1, xsub2, xsub3, xsub4, xsub5)
+# And turn what was not a separable dataset into a separable one. These functions
+# are called kernels. We get a solution with the SVM using the kernel trick, and end
+# up with a nonlinear separation
 
 
 
