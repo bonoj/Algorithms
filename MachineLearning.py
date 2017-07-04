@@ -84,12 +84,30 @@
 
 
 
+# SVMs - Support Vector Machines
+# SVMs find a separating line called a hyperplane between data of two different classes.
+# The SVM algorithm takes as input this data of two different classes and outputs the line
+
+# First and foremost, get the classification correctly. Subject to this constraint,
+# should attempt to maximize the distance to the nearest points of either class (the margin)
+# Extreme outliers are tolerable, can be ignored, SVM is somewhat robust to these outliers
+
+from sklearn import svm
+from sklearn.metrics import accuracy_score
 
 
+X = [[0, 0], [1, 1]]
+y = [0, 1]
+clf = svm.SVC()
+clf.fit(X, y)
+# SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
+#     decision_function_shape=None, degree=3, gamma='auto', kernel='rbf',
+#     max_iter=-1, probability=False, random_state=None, shrinking=True,
+#     tol=0.001, verbose=False)
 
+print(clf.predict([[2., 2.]]))
 
-
-
+# SVM with Nonlinear Data
 
 
 
